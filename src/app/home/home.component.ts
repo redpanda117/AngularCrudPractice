@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {Http, Response, Headers} from '@angular/http';
+//to be able to use the toPromise
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +25,18 @@ export class HomeComponent implements OnInit {
       }
     )
   }
+
+//delete slected product base on the id number  
+  deleteProduct = function(id) {
+    if(confirm("Are you sure?")) {
+      const url = `${"http://localhost:3000/products"}/${id}`;
+      return this.http.delete(url, {headers: this.headers}).toPromise()
+        .then(() => {
+        this.fetchData();
+        })
+    }
+  }
+
 //ngOnInit is a function that is automatically call when every this view is initilize
   ngOnInit() {
     this.fetchData();

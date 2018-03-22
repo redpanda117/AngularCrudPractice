@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
-import {Form} from '@angular/forms';
+
 
 @Component({
   selector: 'app-product',
@@ -28,8 +28,7 @@ export class ProductComponent implements OnInit {
     //item is added and posted to the page
     this.http.post("http://localhost:3000/products/", this.productObj).subscribe((res:Response) => {
       this.isAdded = true;
-      //clear form
-      this.Form.reset()
+     
     })
   }
 
