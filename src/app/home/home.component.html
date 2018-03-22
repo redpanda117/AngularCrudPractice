@@ -1,19 +1,34 @@
-<a routerLink = '/product'> + Add Product</a>
-<table>
-  <th>ID</th>
-  <th>Name</th>
-  <th>Department</th>
-  <th>Price</th>
-  <th>In Stock</th>
-  <th></th>
-  <th></th>
-  <tr *ngFor = "let product of products">
-    <td>{{product.id}}</td>
-    <td>{{product.name}}</td>
-    <td>{{product.department}}</td>
-    <td>${{product.price}}</td>
-    <td>{{product.stock}}</td>
-    <td (click) = "deleteProduct(product.id)"><a>DELETE</a></td>
-    <td [routerLink] = "['/productUpdate', product.id]"><a>UPDATE</a></td>
-  </tr>
-</table>
+
+<div class="container">
+  
+  <a routerLink = '/product' class="btn btn-success" id="addProduct"> + Add Product</a>
+  <button class="btn btn-success" id="addProduct" data-toggle="modal" data-target="#addProductModal"> + Add Product</button>
+
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Price</th>
+          <th>In Stock</th>
+          <th></th>
+        </tr>  
+      </thead>
+      <tbody>
+        <tr *ngFor = "let product of products">
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.department}}</td>
+          <td>${{product.price}}</td>
+          <td>{{product.stock}}</td>
+          <td>
+            <button (click) = "deleteProduct(product.id)" class="btn btn-danger">DELETE</button>
+            <button [routerLink] = "['/productUpdate', product.id]" class="btn btn-info">UPDATE</button>
+          </td>
+        </tr>
+      </tbody>  
+    </table>
+    
+</div>

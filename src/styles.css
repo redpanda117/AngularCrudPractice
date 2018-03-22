@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-table, th, td {
-    border: 1px solid black;
-    padding: 10px;
-  }
+
+#addProduct{
+  float: right;
+  margin: 10px;
+}
+
+.btn-danger{
+margin: 2px;
+color: #ffffff;
+}
