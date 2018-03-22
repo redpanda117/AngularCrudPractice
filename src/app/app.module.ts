@@ -8,13 +8,15 @@ import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
+import { ProductUpdateComponent } from './product-update/product-update.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductComponent
+    ProductComponent,
+    ProductUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,9 @@ import { ProductComponent } from './product/product.component';
     FormsModule,   
     RouterModule.forRoot([
       {path: "", component: HomeComponent},
-      {path: "product", component: ProductComponent}
+      {path: "product", component: ProductComponent},
+      {path: "productUpdate/:id", component: ProductUpdateComponent}
+
     ])
     ],
   providers: [],
