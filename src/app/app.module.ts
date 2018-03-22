@@ -18,7 +18,8 @@ import { ProductComponent } from './product/product.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule,   
+    HttpModule,
+    FormsModule,   
     RouterModule.forRoot([
       {path: "", component: HomeComponent},
       {path: "product", component: ProductComponent}

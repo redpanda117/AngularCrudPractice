@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Http, Response, Headers} from '@angular/http';
+import {Form} from '@angular/forms';
 
 @Component({
   selector: 'app-product',
@@ -7,7 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http) { }
+  //when product is succefully added this message will apear
+  confirmationString:string = "New product has successfully been added";
+  //item not added yet
+  isAdded: boolean = false;
+  productObj:object = {};
+
+  //function that take in iput and add it to database
+  addNewProduct = function(product) {
+    this.productObj = {
+      "name": product.name,
+      "department": product.department,
+      "price": product.price,
+      "stock": product.stock
+    }
+
+    //item is added and posted to the page
+    this.http.post("http://localhost:3000/products/", this.productObj).subscribe((res:Response) => {
+      this.isAdded = true;
+      //clear form
+      this.Form.reset()
+    })
+  }
 
   ngOnInit() {
   }
