@@ -1,11 +1,15 @@
-
+<h1>Products</h1>
 <table>
   <th>ID</th>
   <th>Name</th>
-  <th>Color</th>
+  <th>Department</th>
+  <th>Price</th>
+  <th>In Stock</th>
   <tr *ngFor = "let product of products">
     <td>{{product.id}}</td>
     <td>{{product.name}}</td>
-    <td>{{product.color}}</td>
+    <td>{{product.department}}</td>
+    <td>${{product.price}}</td>
+    <td>{{product.stock_quantity}}</td>
   </tr>
 </table>
