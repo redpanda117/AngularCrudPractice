@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import {RouterModule} from '@angular/router';
 
 
@@ -13,7 +15,8 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule,   
+    BrowserModule,
+    HttpModule,   
     RouterModule.forRoot([
       {path: "", component: HomeComponent}
     ])
