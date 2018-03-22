@@ -10,6 +10,21 @@ https://www.npmjs.com/package/json-server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+For products be desplay you must create a products.json file. Created a json array of at least one product. For example,
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "t-shirt",
+      "department": "Clothing",
+      "price": "5.00",
+      "stock": "100"
+    }
+  ]
+}
+I have created one out side of the angula folder. 
+Run json-server --watch products.json. You must have this server running at the same time as the angular server is runing becuase if not the data wwill not display. 
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
