@@ -19,6 +19,7 @@ export class ProductUpdateComponent implements OnInit {
   private headers = new Headers({ 'Content-Type': 'application/json'});
 
   constructor(private router: Router, private route: ActivatedRoute, private http: Http) { }
+  
   updateProduct(product) {
     this.productObj = {
       "name": product.name,
